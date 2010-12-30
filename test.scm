@@ -11,4 +11,10 @@
   (lambda (n)
     (* n n)))
 
-;(sqr 9)
+(sqr 9)
+
+(define sum
+  (lambda args (+ args)))
+
+(define list
+  (lambda args args))
