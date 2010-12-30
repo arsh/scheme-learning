@@ -6,3 +6,9 @@
           ((= n 1) 1)
           (else (+ (fib (- n 1))
                    (fib (- n 2)))))))
+;(fib 50)
+(define sqr
+  (lambda (n)
+    (* n n)))
+
+;(sqr 9)
