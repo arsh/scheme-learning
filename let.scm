@@ -33,3 +33,7 @@
     (+ x y)))
 ;result=15 since i'm using recursive let, the y definition is not longer in the variable declaration but in the body of the first let, so it's using the inner x declaration
 
+;named let
+;print from 1 to 10
+(let ite ((c 1))
+  
