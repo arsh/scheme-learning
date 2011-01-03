@@ -36,4 +36,7 @@
 ;named let
 ;print from 1 to 10
 (let ite ((c 1))
-  
+  (newline)
+  (display c)
+  (if (< c 10)      
+      (ite (+ c 1))))
