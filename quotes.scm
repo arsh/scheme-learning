@@ -16,5 +16,6 @@
 
 (a-plus-abs-b 5 -1)
 
-'(quote foo)
-'foo
+(quote 10)
+'10
+(quote (quote foo))
