@@ -40,3 +40,6 @@
   (display c)
   (if (< c 10)      
       (ite (+ c 1))))
+
+;letrec
+;not well understood yet...
