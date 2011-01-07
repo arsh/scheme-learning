@@ -39,10 +39,11 @@
   (lambda (ls)
     (cond ((null? ls) 0)
           ((not (pair? ls)) 1)
-          (else (+ (count-leaves (car ls))
+	  (else (+ (count-leaves (car ls))
                    (count-leaves (cdr ls)))))))
 
 (count-leaves '(1 2 (3 (4 (7) 9 ))))
 
 
 ;tail recursion
+(car '(1 . 3))
