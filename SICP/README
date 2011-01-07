@@ -1,0 +1,3 @@
+Solutions to SICP exercises.
+File format: exercises_<chapter_number>.scm
+Sample: exercises_1.scm --> Chapter 1 exercises
