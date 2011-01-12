@@ -33,11 +33,35 @@
 (/ (+ 5 (+ 4 (- 2 (- 3 (+ 6 (/ 4 5)))))) (* 3 (- 6 2) (- 2 7)))
 
 ;exercise 1.3
+(define (min a b)
+  (if (< a b) a b))
+(define (square x)
+  (* x x))
+(define (sum-of-square a b)
+  (+ (square a) (square b)))
+
 (define (sum-square-of-max a b c)
-  (+ (if (> a b) (* a a) (* b b))
-     (if (< b c) (* c c))))
+  (cond ((= (min a b c) a) (sum-of-square b c))
+	((= (min a b c) b) (sum-of-square a c))
+	((= (min a b c) c) (sum-of-square a b))))
+	
+;tests
+(= 13 (sum-square-of-max 2 3 1))
+(= 13 (sum-square-of-max 1 3 2))
+(= 13 (sum-square-of-max 3 2 1))
+(= 13 (sum-square-of-max 1 2 3))
+       
+
+(test-sum-square-of-max)
+
 
 (sum-square-of-max 2 3 1)
+;returns:13
+(sum-square-of-max 2 3 1)
+;returns:13
+(sum-square-of-max 2 3 1)
+;returns:13
+
 
 ;exercise 1.5
 
