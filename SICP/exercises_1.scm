@@ -35,9 +35,9 @@
 ;exercise 1.3
 (define (sum-square-of-max a b c)
   (+ (if (> a b) (* a a) (* b b))
-     (if (> b c) (* b b) (* c c))))
+     (if (< b c) (* c c))))
 
-(sum-square-of-max 1 1 1)
+(sum-square-of-max 2 3 1)
 
 ;exercise 1.5
 
