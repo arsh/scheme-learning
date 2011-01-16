@@ -87,3 +87,31 @@
   (if (< x 0) (- x) x))
 
 (abs -4)
+
+;newton's square root procedures
+(define (average x y)
+  (/ (+ x y) 2.0))
+(average 10 5)
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+
+(define c 0)
+(set! c 0)
+(define (sqrt-iter guess x)
+  (+ c 1)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x) x)))
+
+;mit scheme makes difference between 1 and 1.0
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
+
+(untrace sqrt-iter)
+
+(sqrt 100)
+
+;exercise 1.6
