@@ -115,3 +115,21 @@
 (sqrt 100)
 
 ;exercise 1.6
+
+;factorial examples
+
+(define (factorial n)
+  (if (= n 1)
+      1
+      (* n (factorial (- n 1)))))
+
+(factorial 5)
+
+(define (factorial2 n)
+  (define (ite product counter)
+    (if (> counter n)
+	product
+	(ite (* product counter)
+	     (+ counter 1))))
+  (ite 1 1))
+(factorial2 5)
