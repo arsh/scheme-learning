@@ -98,10 +98,13 @@
 (define (good-enough? guess x)
   (< (abs (- (square guess) x)) 0.001))
 
-(define c 0)
-(set! c 0)
+(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+	(else else-clause)))
+
+
+
 (define (sqrt-iter guess x)
-  (+ c 1)
   (if (good-enough? guess x)
       guess
       (sqrt-iter (improve guess x) x)))
@@ -110,8 +113,25 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-(untrace sqrt-iter)
+(untrace sqrt)
 
-(sqrt 100)
+(sqrt 900)
 
 ;exercise 1.6
+;using new-if it never ends since new-if uses applicative-order unlike
+;if "special form" that uses normal-order
+
+;exercise 1.7
+(trace sqrt-iter)
+(sqrt 0.00025)
+;problem
+(square .033869844451165365) ; .0011471663631461373
+(- .0011471663631461373 .00025) ; .0008971663631461373
+(good-enough? .033869844451165365 0.00025)
+(square 1.5821027443396047e-2)
+;makig good-enough? compare againts a smaller number,
+;will cause to work for certain small numbers
+;testing large numbers
+(untrace sqrt-iter)
+(sqrt 12345678912345)
+
